@@ -1,0 +1,408 @@
+@import 'sass/mixins.sass'
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700&subset=cyrillic')
+
+$red: #dd3e00
+$grey: #ebebeb
+$black: #000
+$a: ease-out .12s
+
+.fb-row
+	+flexbox()
+	+flex-flow(row wrap)
+	+justify-content(space-between)
+	+align-items(center)
+
+.fb-row-center
+	+flexbox()
+	+flex-flow(row wrap)
+	+justify-content(center)
+	+align-items(center)
+
+.fb-row-top
+	+flexbox()
+	+flex-flow(row wrap)
+	+justify-content(space-between)
+	+align-items(flex-start)
+
+.fb-row-start
+	+flexbox()
+	+flex-flow(row wrap)
+	+justify-content(flex-start)
+	+align-items(flex-start)
+
+.clearfix:after 
+	content: ''
+	display: block
+	clear: both 
+	height: 0
+	visibility: hidden
+
+//
+
+body 
+	line-height: 1.4
+	font-size: 16px
+	font-family: 'Montserrat'
+
+p 
+	font-weight: 500
+	
+.wrap
+	width: 100%
+	max-width: 1300px
+	padding: 0 20px
+	margin: 0 auto
+
+
+
+
+.header
+	background: #fff
+	padding: 30px 0
+
+
+.logo
+	display: inline-block
+
+	img
+		display: block
+		width: auto
+
+.navigation
+	a 
+		color: $black
+		margin: 0 4px
+		font-weight: 500
+
+		&:hover
+			text-decoration: underline
+
+
+
+.promo
+	background: url(../img/promo-bg.png) center no-repeat
+	background-size: cover
+
+.action-button
+	position: relative
+	z-index: 10
+	display: block
+	width: max-content
+	background: $red
+	cursor: pointer
+	text-align: center
+	font-weight: 900
+	color: #fff
+	padding: 0 30px
+	border-radius: 50px
+	height: 60px
+	line-height: 60px 
+	transition: $a
+
+	&:hover
+		box-shadow: 0 5px 40px 0 rgba(0,0,0, .3)
+		background: lighten($red, 4%)
+		transition: $a
+
+.promo-first
+	padding: 140px 0 0
+	min-height: 700px
+
+.promo-first__action-container
+
+	img
+		display: block
+		margin-bottom: 40px
+
+	p 
+		max-width: 400px
+		margin: 0 0 60px
+
+.promo-first__info
+	
+
+.promo-first__info-col
+	position: relative
+	width: 500px
+
+.promo-first__info-item
+	position: relative
+	border-radius: 30px
+	padding: 20px 20px 20px 25px
+	width: 240px
+	margin-bottom: 25px
+
+	&.zero-1
+		background: #fff
+		padding-top: 100px
+
+		img
+			position: absolute
+			left: -39px
+			top: 25px
+
+	&.zero-2
+		background: #f9f9f9
+		position: absolute
+		right: 0
+		top: 90px
+		padding-top: 70px
+
+		img
+			position: absolute
+			left: 25px
+			top: -38px
+	
+	&.zero-3
+		background: linear-gradient(60deg, #ffd9ca, #b3e8f3)
+		padding-top: 25px
+		padding-bottom: 65px
+
+		img
+			position: absolute
+			left: 70px
+			bottom: -38px
+
+.promo-details
+	text-align: center
+	position: relative
+	font-weight: 900
+	font-size: 22px
+	cursor: pointer
+	padding-top: 80px
+
+	&:after
+		display: block
+		position: absolute
+		content: '\2193'
+		left: 50%
+		transform: translateX(-50%)
+		bottom: -50px
+		font-size: 50px
+
+.promo-second
+	min-height: 600px
+	padding-top: 200px
+
+	.fb-row-center
+		+align-items(flex-start)
+
+	&__item
+		width: 33%
+		padding-right: 80px
+		padding-left: 40px
+		margin-bottom: 70px
+		color: #fff
+		position: relative
+
+		&:after
+			position: absolute
+			content: ''
+			top: 0
+			right: 60px
+			width: 1px
+			height: 100px
+			background: #fff
+
+		span 
+			position: absolute
+			left: 0
+			top: 0
+			font-size: 16px
+			font-weight: 900
+
+		p
+			margin: 0
+
+		strong
+			display: block
+			font-size: 36px
+
+
+.problems
+	background: $grey
+	padding-top: 70px
+	padding-bottom: 70px
+
+	h2
+		font-size: 36px
+		text-align: center
+		margin: 0 0 50px
+
+.problems__col
+	width: 31%
+
+	&:nth-child(1)
+		.problems__item:after
+			position: absolute
+			z-index: 0
+			content: ''
+			left: 0
+			right: 0
+			top: 0
+			bottom: 0
+			background: url(../img/problems-img-1.png) center no-repeat
+			background-size: cover
+
+	&:nth-child(3)
+		.problems__item:after
+			position: absolute
+			z-index: 0
+			content: ''
+			width: 250px
+			height: 150px
+			right: 0
+			bottom: 0
+			background: url(../img/problems-img-2.png) center no-repeat
+			background-size: cover
+
+	.action-button
+		margin: 100px auto 0
+
+.problems__item
+	position: relative
+	
+	border-radius: 30px
+	overflow: hidden
+	background: #fff
+	min-height: 200px
+	padding: 35px 25px 25px 40px
+
+	h3
+		position: relative
+		z-index: 5
+		font-size: 30px
+
+	span 
+		position: relative
+		z-index: 5
+		color: #007689
+		font-weight: 700
+
+	p 
+		position: relative
+		z-index: 5
+		font-size: 15px
+
+		&:before
+			position: absolute
+			content: '-'
+			left: -15px
+			top: 0
+
+	
+.example
+	position: relative
+	padding-top: 70px
+	background: url(../img/exp-bg.png) center no-repeat
+	background-size: cover
+
+
+	h2
+		font-size: 36px
+		text-align: center
+		margin: 0 0 70px
+		color: #fff
+
+	.fb-row 
+		+align-items(flex-end)
+
+.example__img
+	display: block
+	width: 27%
+
+	&:nth-child(2)
+		width: 36%
+		transform: translateX(50px)
+
+
+.tarrifs
+	padding-top: 100px
+	background: $grey
+	padding-bottom: 120px
+
+	h2
+		font-size: 36px
+		text-align: center
+		margin: 0 0 70px
+
+.tarrifs__item
+	position: relative
+	background: #fff
+	border-radius: 30px
+	padding: 30px
+	width: 31%
+
+	h3
+		font-size: 24px
+		position: relative
+		z-index: 5
+
+	p
+		position: relative
+		z-index: 5
+		margin-bottom: 30px
+
+	&.ti__1
+		padding-top: 350px
+		
+		.tarrifs__item-img
+			right: -22px
+			top: -26px
+			width: 400px
+
+	&.ti__2
+		padding-bottom: 330px
+		
+		.tarrifs__item-img
+			right: 0px
+			bottom: -50px
+			width: 350px
+
+	&.ti__3
+		padding-top: 260px
+		
+		.tarrifs__item-img
+			left: -57px
+			top: 0px
+			width: 350px
+
+.tarrifs__item-img
+	position: absolute
+	z-index: 0
+
+
+
+
+
+
+
+.footer
+	padding: 20px 0 40px
+	background: #0094a7
+
+.footer-action-button
+	@extend .action-button
+	margin: 0 auto
+	transform: translateY(-50px)
+
+.footer-soc
+	a 
+		display: inline-block
+		vertical-align: middle
+		margin: 0 15px 0 0
+
+		img 
+			display: block
+
+.footer-privacy
+	color: #000
+
+
+
+
+
+
+
+
+@media only screen and (max-width : 400px) 
