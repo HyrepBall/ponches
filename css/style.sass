@@ -49,7 +49,7 @@ p
 	
 .wrap
 	width: 100%
-	max-width: 1300px
+	max-width: 1210px
 	padding: 0 20px
 	margin: 0 auto
 
@@ -58,7 +58,7 @@ p
 
 .header
 	background: #fff
-	padding: 30px 0
+	padding: 25px 0
 
 
 .logo
@@ -72,6 +72,7 @@ p
 	a 
 		color: $black
 		margin: 0 4px
+		font-size: 15px
 		font-weight: 500
 
 		&:hover
@@ -105,7 +106,7 @@ p
 		transition: $a
 
 .promo-first
-	padding: 140px 0 0
+	padding: 100px 0 0
 	min-height: 700px
 
 .promo-first__action-container
@@ -113,6 +114,8 @@ p
 	img
 		display: block
 		margin-bottom: 40px
+		width: 100%
+		max-width: 480px
 
 	p 
 		max-width: 400px
@@ -373,6 +376,70 @@ p
 
 
 
+.comments
+	padding: 80px 0 100px
+	background: url(../img/comments-bg.png) left no-repeat
+	background-size: contain
+
+
+.comments-promo-conteiner
+	position: absolute
+	width: 100%
+	height: 100%
+
+.comments-promo
+	width: 100%
+	max-width: 450px
+
+	h2
+		font-size: 40px
+		margin: 0 0 25px
+
+	.comments-promo-heading
+		margin-bottom: 100px
+
+.comments-list
+	width: 55%
+	float: right
+
+.comments-list__item
+	position: relative
+	box-shadow: 0 10px 70px 0 rgba(0,0,0, .14)
+	border-radius: 50px 0px 0 50px
+	font-size: 0
+	margin-bottom: 50px
+	background: #fff
+
+	&-info 
+		position: relative
+		display: inline-block
+		vertical-align: top
+		font-size: 15px
+		width: 60%
+		padding: 35px 40px
+
+		h3
+			margin: 0
+			position: absolute
+			font-size: 22px
+			top: 30px
+			left: -50px
+
+		h4
+			margin: 0px 0 40px
+			text-align: right
+			color: #208394
+
+		p 
+			margin: 0
+
+	&-photo
+		position: absolute
+		right: 0
+		top: 0
+		object-fit: cover
+		width: 40%
+		height: 100%
 
 
 
@@ -401,8 +468,256 @@ p
 
 
 
+.modal-container
+	display: none
+	position: fixed
+	left: 0
+	top: 0
+	z-index: 100
+	width: 100%
+	height: 100%
+	background: rgba(0,0,0, .7)
+	color: #fff
+	text-align: center
+
+.modal-wrap
+	margin: 60px auto
+	width: 100%
+	max-width: 500px
+
+	h2
+		margin: 0 0 25px 
+
+	.modal-back-btn
+		display: inline-block
+		font-size: 16px
+		padding-left: 20px
+		position: relative
+		margin: 0 0 25px
+		cursor: pointer
+
+		&:after
+			position: absolute
+			content: ''
+			width: 38px
+			height: 26px
+			top: 0
+			left: -30px
+			background: url(../img/arrow-to-left.png) center no-repeat
+
+
+.modal-form
+	background: #fff
+	border-radius: 30px
+	padding: 50px
+
+	input
+		display: block
+		width: 100%
+		max-width: 300px
+		height: 40px
+		line-height: 40px
+		margin: 0 auto 20px
+		color: #868686
+		padding: 0 25px 
+		font-size: 15px
+		border: 1px solid #868686
+		border-radius: 20px
+		outline: none
+		font-weight: 500
+		transition: $a
+
+		&:focus
+			box-shadow: 0 5px 20px 0 rgba(0,0,0, .15)
+			transition: $a
+
+	button
+		@extend .action-button
+		outline: none
+		display: block
+		margin: 0 auto
+		border: none
+
+	
+
+
+
+@media only screen and (max-width : 1200px)
+	.comments-promo 
+		max-width: 320px
+
+		h2
+			font-size: 32px
+
+	.comments-list
+		width: 60%
+
+
+@media only screen and (max-width : 1100px)
+	.promo-first
+		padding: 100px 0 0
+		.fb-row 
+			display: block
+
+
+		&__action-container
+			text-align: center
+			margin-bottom: 100px
+
+			img 
+				display: inline-block
+
+			p
+				margin: 0 auto 40px
+
+			.action-button
+				margin: 0 auto
+
+		&__info
+			margin: 0 auto 30px
+
+		.promo-first__info-col
+			width: 100%
+			padding: 0 40px
+			+flexbox()
+			+flex-flow(row wrap)
+			+justify-content(space-between)
+			+align-items(center)
+
+		.promo-first__info-item
+			display: inline-block
+			vertical-align: middle
+
+			&.zero-2
+				position: relative
+				left: auto 
+				top: auto
+
+	.promo-details
+		padding-top: 30px
+
+	.example h2
+		margin: 0 0 40px
+
+	.example__img
+		width: 100%
+		max-width: 400px
+
+	.example .fb-row
+		+flex-flow(column nowrap)
+		+justify-content(space-between)
+		+align-items(center)
+
+	.comments-list__item
+
+		&-info 
+			width: 65%
+
+			h3
+				position: static
+				margin-bottom: 10px
+
+			h4
+				text-align: left
+				margin: 0px 0 20px
+
+			p 
+				font-size: 14px
+
+		&-photo
+			width: 35%
+
+
+
+@media only screen and (max-width : 1000px) 
+	.promo-second__item
+
+		&:after
+			display: none
+
+
+	.tarrifs__item
+		width: 100%
+		max-width: 400px
+		margin: 0 auto 40px
+
+		&.ti__1 
+			padding-top: 250px
+
+			.tarrifs__item-img
+				width: 270px
+				right: -15px
+				top: -17px
+
+		&.ti__2
+			padding-bottom: 230px
+
+			.tarrifs__item-img
+				width: 250px
+
+
+	.problems
+
+		.fb-row-top
+			+justify-content(center)
+
+		&__col
+			width: 48%
+			margin: 0 1% 40px
+
+			.action-button
+				margin: 50px auto 0
+
+
+
+@media only screen and (max-width : 900px) 
+	.promo-second__item
+		width: 50%
+		padding: 0 60px 0 50px
+
+		span 
+			left: 20px
+
+	.comments
+		padding: 50px 0 70px
+		background-size: cover
+
+	.comments-promo h2
+		font-size: 26px
+
+	.comments-promo-conteiner
+		position: static
+
+	.comments-promo
+		max-width: 520px
+		margin: 0 auto 40px 
+		text-align: center
+
+	.comments-promo .comments-promo-heading
+			margin-bottom: 30px
+
+	.comments-list
+		width: 100%
+		padding: 0 20px
+
+		&__item
+			border-radius: 30px
+			overflow: hidden
+
+	.problems__item
+		padding: 0px 25px 25px 40px
+
+		h3
+			font-size: 24px
+
+		p 
+			font-size: 14px
 
 
 
 
+@media only screen and (max-width : 800px) 
+@media only screen and (max-width : 700px) 
+@media only screen and (max-width : 600px) 
+@media only screen and (max-width : 500px) 
 @media only screen and (max-width : 400px) 

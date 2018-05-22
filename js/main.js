@@ -1,60 +1,12 @@
 $(document).ready(function() {
 
-	
-
-	
-	$('.mac-tabs').tabslet({
-		attribute: 'alt',
-		animation: true,
-		controls: {
-			prev: '.mac-prev',
-			next: '.mac-next'
-		}
-	});
-	$('.pluses-tabs').tabslet({
-		attribute: 'alt',
-		animation: true,
-
+	$('.action-button, .reg-button').click(function(e) {
+		$('.modal-container').fadeIn(150);
+		e.preventDefault();
 	});
 
-	$('.happy-slider').slick({
-		infinite: true,
-		slidesToShow: 5,
-		slidesToScroll: 1,
-		responsive: [
-				{
-					breakpoint: 1400,
-					settings: {
-						slidesToShow: 4,
-						slidesToScroll: 1,
-						infinite: true,
-					}
-				},
-				{
-					breakpoint: 950,
-					settings: {
-						slidesToShow: 3,
-						slidesToScroll: 1,
-						infinite: true,
-					}
-				},
-				{
-					breakpoint: 710,
-					settings: {
-						slidesToShow: 2,
-						slidesToScroll: 1,
-						infinite: true,
-					}
-				},
-				{
-					breakpoint: 410,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1,
-						infinite: true,
-					}
-				},
-			],
+	$('.modal-back-btn').click(function() {
+		$(this).closest('.modal-container').fadeOut(150);
 	});
 
 	//form
