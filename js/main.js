@@ -1,20 +1,5 @@
 $(document).ready(function() {
 
-	$(window).scroll(function(e) {    
-
-		// Липкий хедер
-		var scroll = $(window).scrollTop();
-		var lastScrollTop = 0;
-
-		if (scroll >= 1) {
-				$(".header").addClass("toFixed");
-		} else
-		if (scroll < 100) {
-			$(".header").removeClass("toFixed");
-		}
-
-	}); //missing );
-
 	if (window.matchMedia('(max-width: 500px)').matches) {
 		var lastScrollTop = 0;
 
@@ -31,6 +16,11 @@ $(document).ready(function() {
 		   lastScrollTop = st;
 		});
 	}
+
+	$('.footer-privacy').click(function(e) {
+		$('.modal-container.privacy').fadeIn(150);
+		e.preventDefault();
+	});
 
 	$('.action-button, .reg-button').click(function(e) {
 		$('.modal-container.registration').fadeIn(150);
