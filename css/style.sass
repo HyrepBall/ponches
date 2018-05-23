@@ -118,7 +118,7 @@ p
 		transition: $a
 
 .promo-first
-	padding: 100px 0 1px
+	padding: 150px 0 1px
 	background: #ececec
 
 .promo-first__action-container
@@ -150,12 +150,12 @@ p
 
 	&.zero-1
 		background: #fff
-		padding-top: 100px
+		padding-top: 50px
 
 		img
 			position: absolute
-			left: -39px
-			top: 25px
+			left: 90px
+			top: -38px
 
 	&.zero-2
 		background: #f9f9f9
@@ -748,42 +748,38 @@ p
 
 
 @media only screen and (max-width : 900px) 
-	.promo-first__info-item 
-
+	.promo-first .promo-first__info-item
+		margin: 0 15px 70px
 
 
 		&.zero-1
-			padding: 30px
+			padding: 60px 30px 30px
 			text-align: center
-			
+
 			img 
-				position: static
-				display: inline-block
-				margin-bottom: 15px
+				left: 65px
 
 			p 
 				margin: 0
 
 		&.zero-2
-			padding: 30px
+			padding: 60px 30px 30px
 			text-align: center
-			
+
 			img 
-				position: static
-				display: inline-block
-				margin-bottom: 15px
+				left: 50px
 
 			p 
 				margin: 0
 
 		&.zero-3
-			padding: 30px
+			padding: 60px 30px 30px
 			text-align: center
-			
+
 			img 
-				position: static
-				display: inline-block
-				margin-bottom: 15px
+				bottom: auto 
+				top: -38px
+				left: 55px
 
 			p 
 				margin: 0
@@ -863,13 +859,6 @@ p
 		&--mob 
 			display: block
 			width: 100%
-
-			&:nth-child(5)
-				transform: translateX(10px)
-				width: 110%
-
-			&:nth-child(6)
-				transform: translateX(0px)
 
 	.comments-list__item
 		overflow: visible
