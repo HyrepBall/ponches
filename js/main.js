@@ -1,7 +1,49 @@
 $(document).ready(function() {
 
+	$(window).scroll(function(e) {    
+
+		// Липкий хедер
+		var scroll = $(window).scrollTop();
+		var lastScrollTop = 0;
+
+		if (scroll >= 1) {
+				$(".header").addClass("toFixed");
+		} else
+		if (scroll < 100) {
+			$(".header").removeClass("toFixed");
+		}
+
+	}); //missing );
+
+	if (window.matchMedia('(max-width: 500px)').matches) {
+		var lastScrollTop = 0;
+
+		$(window).scroll(function(event){
+		   var st = $(this).scrollTop();
+
+		   if (st > lastScrollTop && lastScrollTop !== 0){
+		       // downscroll code
+		       $(".header").addClass("hideUp");
+		   } else {
+		      // upscroll code
+		      $(".header").removeClass("hideUp");
+		   }
+		   lastScrollTop = st;
+		});
+	}
+
 	$('.action-button, .reg-button').click(function(e) {
-		$('.modal-container').fadeIn(150);
+		$('.modal-container.registration').fadeIn(150);
+		e.preventDefault();
+	});
+
+	$('.login-button').click(function(e) {
+		$('.modal-container.login').fadeIn(150);
+		e.preventDefault();
+	});
+
+	$('.footer-action-button').click(function(e) {
+		$('.modal-container.request').fadeIn(150);
 		e.preventDefault();
 	});
 
